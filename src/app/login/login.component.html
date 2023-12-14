@@ -1,0 +1,32 @@
+<section class="section">
+    <div class="contact">
+        <form (ngSubmit)="submitForm()" class="form">
+            <h3 style="color: rgb(0, 0, 0);">Login</h3>
+            <div class="form-group">
+                <input type="text" id="name" name="name" class="form-control" [(ngModel)]="contactForm.name" required>
+                <label for="name" class="form-label">Name:</label>
+            </div>
+            <div class="form-group">
+                <input type="text" id="email" name="email" class="form-control" [(ngModel)]="contactForm.email"
+                    required>
+                <label for="email" class="form-label">Email:</label>
+            </div>
+            <div class="form-group">
+                <input id="message" type="text" name="message" class="form-control" [(ngModel)]="contactForm.message"
+                    required>
+                <label for="message" class="form-label">Message:</label>
+            </div>
+
+            <div class="form-group">
+                <button [disabled]="!isFormValid()">Submit</button>
+            </div>
+
+
+
+            <div *ngIf="submissionStatus" class="submission-status">
+                <p style="color: rgb(0, 0, 0); margin-top: 5px;">{{ submissionStatus }}</p>
+            </div>
+        </form>
+    </div>
+
+</section>

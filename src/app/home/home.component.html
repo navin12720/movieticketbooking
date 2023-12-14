@@ -1,0 +1,31 @@
+<ng-container *ngIf="movies.length === 0; else content">
+
+  <p>Loading movies...</p>
+</ng-container>
+
+<ng-template #content>
+  <app-movie-list [movies]="movies" (movieSelected)="selectMovie($event)"></app-movie-list>
+</ng-template>
+<div class="showmovie">
+  <ng-container *ngIf="selectedMovie; else noMovieSelected">
+    <app-movie-details [movie]="selectedMovie" (ticketBooked)="handleTicketBooked()"></app-movie-details>
+    <button (click)="toggle()">Go to seatbooking</button>
+    <app-seat-map *ngIf="!showLogin" [selectedSeats]="selectedSeats" (seatSelected)="selectSeat($event)"
+      (seatsCleared)="clearSelectedSeats()">
+    </app-seat-map>
+
+    <div class="succ">
+      <div *ngIf="seatBooked">
+        <form action="">
+          <h2>Tickets Booked Successfully!</h2>
+          <p>Movie: {{ selectedMovie?.name }}</p>
+          <p>Date: {{ bookingDate }}</p>
+          <p>Seats: {{ selectedSeats.sort().join(', ') }}</p>
+        </form>
+      </div>
+    </div>
+  </ng-container>
+</div>
+<ng-template #noMovieSelected>
+  <p style="text-align: center;font-size: 60px;text-shadow:0px 0px 10px rgb(0, 0, 0) ;">No movie selected!!</p>
+</ng-template>

@@ -1,0 +1,16 @@
+<form action="">
+  <h3 style="text-align: center;">Select seats</h3>
+  <div *ngFor="let seatRow of seatMap; let rowIndex = index" class="seat-row">
+    <span *ngFor="let seat of seatRow; let seatIndex = index"
+      [ngClass]="{'seat': true, 'selected': isSeatSelected(seat)}" (click)="toggleSeatSelection(seat)">
+      {{ seat }}
+    </span>
+  </div>
+</form>
+<div class="seat-map"><button (click)="clearSeats()">Clear Selection</button>
+  <!-- <ul>
+    <li *ngFor="let seatRow of seatMap;let rowIndex = index" class="seat-row">
+      *ngFor="let seat of seatRow; let seatIndex = index" (click)="selectSeat(seat)"></li>
+  </ul>
+  <p *ngIf="selectedSeats">{{selectedSeats}}</p> -->
+</div>

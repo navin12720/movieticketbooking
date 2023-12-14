@@ -1,0 +1,20 @@
+
+<div class="sear">
+<input type="text" placeholder=" Enter moviename" [(ngModel)]="searchTrem" (keyup)="searchmovie">
+<!-- <a *ngIf="!showLogin" (click)="showLoginComponent()">LOGIN</a> -->
+<!-- <app-login *ngIf="showLogin"></app-login></div> -->
+
+<div class="al">
+<ul>
+   <li *ngFor="let movie of movies" [hidden]="!movie.name.toLowerCase().includes(searchTrem.toLowerCase())"  (click)="selectMovie(movie)"> 
+    <!-- <img [src]="movie.imageUrl" width="100px"height="120px"><br> -->
+    <span>{{movie.name}}</span>
+  </li>
+</ul></div> 
+<ul>
+    <li *ngFor="let movie of movies"  (click)="selectMovie(movie)">
+      <img [src]="movie.imageUrl" width="170px"height="190px"><br>
+      {{ movie.name }}
+    </li>
+  </ul>
+  

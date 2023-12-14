@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-image: url("D:\netflix-800x450.jpg");
+  background-attachment: fixed;
+  height: 200vh;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  /* background:linear-gradient(320deg,#0074D9,#2ECC40,#B10DC9);
+   background-attachment: fixed; */
+
+  overflow: visible;
+}
+.cont {
+  position: relative;
+  z-index: 1;
+}
+.root {
+  position: relative;
+  z-index: 2;
+}

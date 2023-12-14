@@ -1,0 +1,12 @@
+<div class="detail">
+<div *ngIf="movie"><form action="">
+    <h2>Movie Details</h2>
+    <img [src]="movie.imageUrl" width="100px" height="120px">
+    <p>Name: {{ movie.name }}</p>
+    <p>Duration: {{ movie.duration }} minutes</p>
+    <p>Director: {{ movie.director }}</p>
+    <p>Genre: {{ movie.genre }}</p>
+    <p>Language: {{ movie.language }}</p></form>
+    <button (click)="bookTickets()">Book Tickets</button>
+    
+  </div></div>
