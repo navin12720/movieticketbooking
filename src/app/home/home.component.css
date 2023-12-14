@@ -39,6 +39,7 @@ form {
   font-family: "Times New Roman", Times, serif;
   font-size: larger;
   animation: rise 0.5s linear;
+  text-align: center;
 }
 
 .showmovie {
